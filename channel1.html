@@ -3,55 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SL-W vs IRE-W Streaming</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Channel 1</title>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link rel="stylesheet" href="style.css"> <!-- Include your main stylesheet -->
 </head>
 <body>
-    <div class="streaming-container">
-        <h1>Watch SL-W vs IRE-W Live</h1>
 
-        <!-- Plyr video player -->
-        <div class="plyr__video-embed" id="player">
-            <iframe
-                src="https://dai.google.com/linear/hls/event/2Dy31QnqQ9azqgd8Ux5WeA/master.m3u8"
-                allowfullscreen
-                allowtransparency
-                allow="autoplay"
-            ></iframe>
-        </div>
+<div class="container">
+    <div class="channel">
+        <h3>Channel 1</h3>
+        <video id="player" controls crossorigin playsinline>
+            <source type="application/x-mpegURL" src="your-m3u8-link-here.m3u8" />
+        </video>
     </div>
+</div>
 
-    <!-- Telegram Popup -->
-    <div id="telegramPopup" class="popup">
-        <div class="popup-content">
-            <h2>Join Our Telegram Channel</h2>
-            <p>Get live updates and more by joining our Telegram channel!</p>
-            <a href="https://t.me/YourChannel" target="_blank" class="btn">Join Now</a>
-            <button id="closePopup">Close</button>
-        </div>
-    </div>
+<script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+<script>
+    const player = new Plyr('#player', {
+        controls: ['play', 'progress', 'volume', 'fullscreen'],
+    });
+</script>
 
-    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
-    <script>
-        // Initialize Plyr player
-        const player = new Plyr('#player');
-
-        // Telegram Popup functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const popup = document.getElementById('telegramPopup');
-            const closePopup = document.getElementById('closePopup');
-
-            // Show the popup after 2 seconds
-            setTimeout(function () {
-                popup.style.display = 'block';
-            }, 2000);
-
-            // Close the popup when clicking the close button
-            closePopup.addEventListener('click', function () {
-                popup.style.display = 'none';
-            });
-        });
-    </script>
 </body>
 </html>
