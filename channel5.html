@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Channel Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+</head>
+<body>
+    <div class="streaming-container">
+        <h1>Watch New Channel Live</h1>
+
+        <!-- Plyr video player -->
+        <div class="plyr__video-embed" id="player">
+            <iframe
+                src="https://dai.google.com/ssai/event/-8ZdRZfGTvG731m1OlXeIg/master.m3u8"
+                allowfullscreen
+                allowtransparency
+                allow="autoplay"
+            ></iframe>
+        </div>
+    </div>
+
+    <!-- Telegram Popup -->
+    <div id="telegramPopup" class="popup">
+        <div class="popup-content">
+            <h2>Join Our Telegram Channel</h2>
+            <p>Get live updates and more by joining our Telegram channel!</p>
+            <a href="https://t.me/cricketmantrabackup" target="_blank" class="btn">Join Now</a>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+    <script>
+        // Initialize Plyr player
+        const player = new Plyr('#player');
+
+        // Telegram Popup functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const popup = document.getElementById('telegramPopup');
+            const closePopup = document.getElementById('closePopup');
+
+            // Show the popup after 2 seconds
+            setTimeout(function () {
+                popup.style.display = 'block';
+            }, 2000);
+
+            // Close the popup when clicking the close button
+            closePopup.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+  </html>
