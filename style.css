@@ -43,3 +43,12 @@ a {
 a:hover {
     color: #007BFF;
 }
+
+.streaming-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+iframe {
+    border-radius: 10px;
+}
