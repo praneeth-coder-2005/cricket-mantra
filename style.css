@@ -42,10 +42,11 @@ header h1 {
 
 /* Image styling inside channels */
 .channel img {
-    width: 200px;
-    height: 100px;
+    width: 100%; /* Ensure the image takes the full width of the container */
+    height: 100%; /* Ensure the image takes the full height of the container */
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image fills the container and is cropped if necessary */
+    object-position: center; /* Keeps the image centered if it's cropped */
 }
 
 /* Hover effect for the channel blocks */
@@ -53,5 +54,3 @@ header h1 {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-
-/* Optional additional styling for the footer or other page elements can go here */
