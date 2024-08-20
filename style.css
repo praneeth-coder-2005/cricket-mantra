@@ -1,92 +1,76 @@
-/* General Page Styling */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4; /* Light background color */
-    color: #333; /* Darker text color for readability */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d2d2d;
+    color: #fff;
+}
+
+/* Header */
 header {
-    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: #1b1b1b;
 }
 
 header h1 {
     font-size: 2.5rem;
-    color: #333; /* Darker text color for the title */
+    color: white;
+    margin-bottom: 10px;
 }
 
-/* Styling for the channel container */
-.channel-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 50px auto;
-    max-width: 1200px;
-    background-color: #ffffff; /* White background for the container */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
-}
-
-/* Styling for individual channels */
-.channel {
-    background-color: #fafafa; /* Very light grey for the channel background */
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    width: calc(33.33% - 40px); /* 3 channels per row on large screens */
-    margin: 20px;
-}
-
-/* Image styling inside channels (landscape size) */
-.channel img {
-    width: 100%;
-    height: 200px; /* Fixed height for landscape aspect ratio */
-    border-radius: 10px;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Channel titles */
-.channel h3 {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #333; /* Dark text color */
-}
-
-/* Hover effect for the channel blocks */
-.channel:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
-}
-
-/* Anchor tag styling to remove underlines and manage hover */
-a {
+.telegram-button a {
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    color: inherit; /* Inherit the color from the surrounding elements */
+    border-radius: 5px;
 }
 
-a:hover {
-    color: #007BFF; /* Blue color on hover for links */
+.telegram-button a:hover {
+    background-color: #007bb5;
 }
 
-/* Responsive Styling for Medium Screens */
-@media (max-width: 992px) {
-    .channel {
-        width: calc(50% - 40px); /* 2 channels per row on medium screens */
-    }
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Responsive Styling for Small Screens */
-@media (max-width: 600px) {
-    .channel {
-        width: 100%; /* 1 channel per row on small screens (mobile) */
-        margin: 20px 0;
-    }
+.grid-item {
+    background-color: #3c3c3c;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.grid-item p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1b1b1b;
 }
